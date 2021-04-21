@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/vandium-io/aws-param-env.svg?branch=master)](https://travis-ci.org/vandium-io/aws-param-env)
-[![npm version](https://badge.fury.io/js/aws-param-env.svg)](https://badge.fury.io/js/aws-param-env)
+[![Build Status](https://travis-ci.org/vandium-io/aws-one-param-env.svg?branch=master)](https://travis-ci.org/vandium-io/aws-one-param-env)
+[![npm version](https://badge.fury.io/js/aws-one-param-env.svg)](https://badge.fury.io/js/aws-one-param-env)
 
-# aws-param-env
+# aws-one-param-env
 
 Module for loading parameter-store values from AWS SSM into environment variables
 
@@ -15,14 +15,14 @@ Module for loading parameter-store values from AWS SSM into environment variable
 ## Installation
 Install via npm.
 
-	npm install aws-param-env --save
+	npm install aws-one-param-env --save
 
-**Note**: `aws-param-env` does not contain a dependency on `aws-sdk` and it should be installed within your application.
+**Note**: `aws-one-param-env` does not contain a dependency on `aws-sdk` and it should be installed within your application.
 
 ## Getting Started
 
 ```js
-const awsParamEnv = require( 'aws-param-env' );
+const awsParamEnv = require( 'aws-one-param-env' );
 
 awsParamEnv.load( '/my-service-path-in-ssm/env' );
 ```
@@ -31,7 +31,7 @@ If your AWS region is not set in your environment variables, then it can be set 
 options when calling `load()`:
 
 ```js
-const awsParamEnv = require( 'aws-param-env' );
+const awsParamEnv = require( 'aws-one-param-env' );
 
 awsParamEnv.load( '/my-service-path-in-ssm/env', { region: 'us-east-1' } );
 ```
@@ -41,7 +41,7 @@ To load the environment variables automatically from a path, set the `AWS_SSM_EN
 
 ```js
 // AWS_SSM_ENV_PATH = '/my-services/service1/env', AWS_REGION='us-east-1'
-require( 'aws-param-env' );
+require( 'aws-one-param-env' );
 
 // environment variables are automatically loaded from the SSM parameter store
 ```
