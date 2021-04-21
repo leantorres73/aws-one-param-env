@@ -1,12 +1,16 @@
 # aws-one-param-env
 
-Module for loading parameter-store values from AWS SSM into environment variables
+Module for loading parameter-store value from AWS SSM into environment variables. 
+The difference between this module and others is that it's expecting one parameter store with the form of an env file like:
+
+YOUR_CONFIG_1=Test1
+YOUR_CONFIG_2=Test2
 
 ## Features
 * Loads one parameter by path
 * Runs synchronously to that environment variables can be set before your code loads
-* Can run inside AWS Lambda environment
-* AWS Node.js 10.x compatible
+* Can run inside AWS Lambda environment or EC2
+* AWS Node.js 10.x or greater compatible
 
 ## Installation
 Install via npm.
@@ -20,7 +24,7 @@ Install via npm.
 ```js
 const awsParamEnv = require( 'aws-one-param-env' );
 
-awsParamEnv.load( '/my-service-path-in-ssm/env' );
+awsParamEnv.load( '/service-path/env' );
 ```
 
 If your AWS region is not set in your environment variables, then it can be set programmatically by supplying
@@ -29,7 +33,7 @@ options when calling `load()`:
 ```js
 const awsParamEnv = require( 'aws-one-param-env' );
 
-awsParamEnv.load( '/my-service-path-in-ssm/env', { region: 'us-east-1' } );
+awsParamEnv.load( '/service-path/env', { region: 'us-east-1' } );
 ```
 
 To load the environment variables automatically from a path, set the `AWS_SSM_ENV_PATH` to the SSM path and the
@@ -39,7 +43,7 @@ To load the environment variables automatically from a path, set the `AWS_SSM_EN
 // AWS_SSM_ENV_PATH = '/my-services/service1/env', AWS_REGION='us-east-1'
 require( 'aws-one-param-env' );
 
-// environment variables are automatically loaded from the SSM parameter store
+// environment variables are automatically loaded from one SSM parameter store
 ```
 
 ## License

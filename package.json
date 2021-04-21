@@ -16,7 +16,8 @@
     "env"
   ],
   "scripts": {
-    "test": "nyc mocha 'lib/**/__tests__/*' --recursive"
+    "test": "nyc mocha 'lib/**/__tests__/*' --recursive",
+    "start": "node examples/test.js"
   },
   "nyc": {
     "check-coverage": true,
@@ -35,7 +36,7 @@
   "engines": {
     "node": ">=10.16"
   },
-  "author": "Vandium Software Inc.",
+  "author": "Leandro Torres",
   "license": "BSD-3-Clause",
   "files": [
     "/lib"
