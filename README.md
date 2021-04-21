@@ -1,16 +1,12 @@
-[![Build Status](https://travis-ci.org/vandium-io/aws-one-param-env.svg?branch=master)](https://travis-ci.org/vandium-io/aws-one-param-env)
-[![npm version](https://badge.fury.io/js/aws-one-param-env.svg)](https://badge.fury.io/js/aws-one-param-env)
-
 # aws-one-param-env
 
 Module for loading parameter-store values from AWS SSM into environment variables
 
 ## Features
-* Loads parameters by path
+* Loads one parameter by path
 * Runs synchronously to that environment variables can be set before your code loads
-* Recursively loads and decodes parameters by default
 * Can run inside AWS Lambda environment
-* AWS Lambda Node.js 10.x compatible
+* AWS Node.js 10.x compatible
 
 ## Installation
 Install via npm.
@@ -45,11 +41,6 @@ require( 'aws-one-param-env' );
 
 // environment variables are automatically loaded from the SSM parameter store
 ```
-
-
-## Feedback
-
-We'd love to get feedback on how to make this tool better. Feel free to contact us at `feedback@vandium.io`
 
 ## License
 
