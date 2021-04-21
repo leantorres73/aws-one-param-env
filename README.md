@@ -3,8 +3,10 @@
 Module for loading parameter-store value from AWS SSM into environment variables. 
 The difference between this module and others is that it's expecting one parameter store with the form of an env file like:
 
+```js
 YOUR_CONFIG_1=Test1
 YOUR_CONFIG_2=Test2
+```
 
 ## Features
 * Loads one parameter by path
